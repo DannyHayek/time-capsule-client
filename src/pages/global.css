@@ -43,10 +43,23 @@
 .primary-btn {
     background-color: #154866;
     color: white;
+    border: 1px solid black;
+    font-weight: bold;
+}
+
+.primary-btn:hover {
+    background-color: #307aa4;
+    cursor: pointer;
 }
 
 .secondary-btn {
     background-color: white;
     color: #998A5B;
-    border: 1px solid #998A5B;
+    border: 2px solid #998A5B;
+    font-weight: bold;
+}
+
+.secondary-btn:hover {
+    background-color: rgb(202, 201, 201);
+    cursor: pointer;
 }

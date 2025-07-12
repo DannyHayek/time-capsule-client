@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   height: 100%;
+  width: 100%;
 }
 
 hr {
@@ -8,12 +9,15 @@ hr {
 }
 
 img {
-  max-width: 80%;
+  width: 100%;
   max-height: auto;
+  margin-bottom: 4%;
 }
 
 p {
-  font-size: 30px;
+  /* Source: https://matthewjamestaylor.com/responsive-font-size */
+  font-size: calc(20px + 0.390625vw);
+  max-width: 60%;
 }
 
 .landing-shore-btn {
@@ -21,10 +25,19 @@ p {
   text-decoration: underline;
   font-weight: bold;
   border: none;
+  font-size: 40px;
+  margin: 5% 0 3%;
+}
+
+.landing-shore-btn:hover {
+  cursor: pointer;
+  text-decoration: solid;
 }
 
 .auth-btn {
-  width: 200px;
-  height: 80px;
-  border-radius: 20%;
+  width: 30rem;
+  height: 8rem;
+  border-radius: 60px;
+  font-size: 40px;
+  margin: 2%;
 }
