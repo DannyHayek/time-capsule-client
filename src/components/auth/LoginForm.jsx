@@ -1,13 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import AuthButton from './AuthButton'
 import EmailInput from './EmailInput'
 import PasswordInput from './PasswordInput'
 import AlterAuth from './AlterAuth'
+import NameInput from './NameInput'
 
 const LoginForm = () => {
+    const [authType, setAuth] = useState(localStorage.getItem("authType"));
+    console.log(authType);
+
   return (
     <div className='flex column flex-center auth-form-btn'>
         <form className='flex column flex-center auth-form'>
+            {authType === "Signup" && <NameInput />}
+
             <EmailInput />
 
             <PasswordInput />
