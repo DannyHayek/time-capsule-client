@@ -3,7 +3,7 @@ import React from 'react'
 const LandingShoreButton = () => {
   return (
     <div>
-        <button>View Message Shore</button>
+        <button className='landing-shore-btn'>View Message Shore</button>
     </div>
   )
 }

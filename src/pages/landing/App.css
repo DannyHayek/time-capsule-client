@@ -1,3 +1,30 @@
 .App {
   text-align: center;
+  height: 100%;
+}
+
+hr {
+  max-width: 80%;
+}
+
+img {
+  max-width: 80%;
+  max-height: auto;
+}
+
+p {
+  font-size: 30px;
+}
+
+.landing-shore-btn {
+  background: none;
+  text-decoration: underline;
+  font-weight: bold;
+  border: none;
+}
+
+.auth-btn {
+  width: 200px;
+  height: 80px;
+  border-radius: 20%;
 }

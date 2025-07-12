@@ -1,4 +1,5 @@
 import './App.css';
+import '../global.css';
 import TitleLogo from '../../components/landing/TitleLogo';
 import LandingIntro from '../../components/landing/LandingIntro';
 import LandingShoreButton from '../../components/landing/LandingShoreButton';
@@ -7,7 +8,7 @@ import HorizontalRule from '../../components/landing/HorizontalRule';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App flex column space-evenly">
       <TitleLogo />
       <LandingIntro />
       <LandingShoreButton />
