@@ -1,10 +1,21 @@
-import React from 'react'
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const LandingAuthButtons = () => {
+  const navigate = useNavigate();
+
   return (
     <div>
-        <button className='auth-btn primary-btn login-btn font'>Login</button>
-        <button className='auth-btn secondary-btn signup-btn font'>Signup</button>
+        <button onClick={() => {
+            navigate("/authPage");
+          }} 
+          className='auth-btn primary-btn login-btn font'>Login</button>
+
+        <button onClick={() => {
+            navigate("/authPage");
+          }} 
+          className='auth-btn secondary-btn signup-btn font'>Signup</button>
+
     </div>
   )
 }

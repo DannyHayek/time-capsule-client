@@ -1,9 +1,14 @@
-import React from 'react'
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const LandingShoreButton = () => {
+  const navigate = useNavigate();
+
   return (
     <div>
-        <button className='landing-shore-btn'>View Message Shore</button>
+        <button onClick={() => {
+            navigate("/messageShore");
+          }} className='landing-shore-btn'>View Message Shore</button>
     </div>
   )
 }
