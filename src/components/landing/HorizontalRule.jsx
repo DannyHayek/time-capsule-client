@@ -3,7 +3,7 @@ import React from 'react'
 const HorizontalRule = () => {
   return (
     <div className=''>
-        <hr></hr>
+        <hr className='landing-horizontal'></hr>
     </div>
   )
 }

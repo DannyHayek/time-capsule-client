@@ -1,18 +1,22 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 const LandingAuthButtons = () => {
   const navigate = useNavigate();
 
+
   return (
     <div>
         <button onClick={() => {
-            navigate("/authPage");
+          localStorage.setItem("authType", "Login");
+          navigate("/authPage");
           }} 
           className='auth-btn primary-btn login-btn font'>Login</button>
 
         <button onClick={() => {
-            navigate("/authPage");
+          localStorage.setItem("authType", "Signup");
+          navigate("/authPage");
           }} 
           className='auth-btn secondary-btn signup-btn font'>Signup</button>
 

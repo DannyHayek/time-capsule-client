@@ -4,7 +4,7 @@ import logo from '../../assets/Logo/temporal_river_logo_trans.png';
 const TitleLogo = () => {
   return (
     <div>
-      <img src={logo} alt="Temporal River Logo"></img>
+      <img className='landing-logo' src={logo} alt="Temporal River Logo"></img>
     </div>
   )
 }
