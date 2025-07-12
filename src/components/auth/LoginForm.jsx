@@ -1,15 +1,16 @@
 import React from 'react'
 import AuthButton from './AuthButton'
+import EmailInput from './EmailInput'
+import PasswordInput from './PasswordInput'
 
 const LoginForm = () => {
   return (
     <div>
         <section>
           <form className='flex column flex-center'>
-            <label className='auth-label'>Email</label>
-            <input></input>
-            <label className='auth-label'>Password</label>
-            <input></input>
+            <EmailInput />
+
+            <PasswordInput />
           </form>
         </section>
         

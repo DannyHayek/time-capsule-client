@@ -5,7 +5,7 @@ const AuthButton = () => {
 
   return (
     <div>
-        <button>
+        <button className='auth-page-btn primary-btn login-btn font'>
             {localStorage.getItem("authType")}
         </button>
     </div>

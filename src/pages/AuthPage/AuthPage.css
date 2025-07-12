@@ -12,12 +12,29 @@
     background-color: black;
     opacity: 80%;
     height: 100%;
-    min-width: 40dvw;
+    min-width: 35dvw;
 }
 
 .auth-label {
     color: white;
-    font-weight: 500;
+    font-weight: 700;
     text-align: left;
     padding: 5%;
+
+}
+
+input {
+    width: 50%;
+    border-radius: 113.5px;
+    text-align: center;
+    padding: 2%;
+    font-size: calc(15px + 0.390625vw);
+}
+
+.auth-page-btn {
+    width: 55%;
+    height: 4rem;
+    border-radius: 60px;
+    font-size: calc(28px + 0.390625vw);
+    margin: 2%;
 }
