@@ -1,27 +1,14 @@
 import React from 'react'
+import LoginForm from './LoginForm';
 
-const BackgroundImage = () => {
+const Background = () => {
   return (
     <div className='auth-image flex'>
       <aside className='auth-form-background'>
-
-        <section>
-          <form className='flex column flex-center'>
-            <label className='auth-label'>Email</label>
-            <input></input>
-            <label className='auth-label'>Password</label>
-            <input></input>
-          </form>
-        </section>
-        
-        <section>
-          <button>
-            Login
-          </button>
-        </section>
+        <LoginForm />
       </aside>
     </div>
   )
 }
 
-export default BackgroundImage;
+export default Background;

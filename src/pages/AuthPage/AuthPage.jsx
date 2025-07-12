@@ -1,11 +1,11 @@
 import React from 'react';
 import './AuthPage.css';
 import '../global.css';
-import BackgroundImage from '../../components/auth/Background';
+import Background from '../../components/auth/Background';
 
 const AuthPage = () => {
   return (
-    <BackgroundImage />
+    <Background />
   )
 }
 
