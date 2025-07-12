@@ -1,11 +1,11 @@
 import React from 'react'
-import LoginForm from './LoginForm';
+import AuthForm from './AuthForm';
 
 const Background = () => {
   return (
     <div className='auth-image flex'>
       <aside className='auth-form-background'>
-        <LoginForm />
+        <AuthForm />
       </aside>
     </div>
   )

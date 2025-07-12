@@ -5,7 +5,7 @@ import PasswordInput from './PasswordInput'
 import AlterAuth from './AlterAuth'
 import NameInput from './NameInput'
 
-const LoginForm = () => {
+const AuthForm = () => {
     const [authType, setAuth] = useState(localStorage.getItem("authType"));
     console.log(authType);
 
@@ -21,9 +21,9 @@ const LoginForm = () => {
 
         <AuthButton />
 
-        <AlterAuth />
+        <AlterAuth authType={authType} setAuth={setAuth}/>
     </div>
   )
 }
 
-export default LoginForm
+export default AuthForm
