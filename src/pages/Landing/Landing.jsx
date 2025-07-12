@@ -1,21 +1,21 @@
-import './App.css';
-import '../global.css';
+import React from 'react';
+import './Landing.css';
 import TitleLogo from '../../components/landing/TitleLogo';
 import LandingIntro from '../../components/landing/LandingIntro';
 import LandingShoreButton from '../../components/landing/LandingShoreButton';
 import LandingAuthButtons from '../../components/landing/LandingAuthButtons';
 import HorizontalRule from '../../components/landing/HorizontalRule';
 
-function App() {
+const Landing = () => {
   return (
-    <div className="App flex column space-evenly">
+    <div className="landing flex column space-evenly">
       <TitleLogo />
       <LandingIntro />
       <LandingShoreButton />
       <HorizontalRule />
       <LandingAuthButtons />
     </div>
-  );
+  )
 }
 
-export default App;
+export default Landing;
