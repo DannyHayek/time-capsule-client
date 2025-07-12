@@ -1,0 +1,23 @@
+.auth-image {
+    background-image: url("../../assets/Background/message-in-a-bottle-o.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    height: 100dvh;
+    width: auto;
+    transform: rotateX('180');
+}
+
+.auth-form-background {
+    background-color: black;
+    opacity: 80%;
+    height: 100%;
+    min-width: 40dvw;
+}
+
+.auth-label {
+    color: white;
+    font-weight: 500;
+    text-align: left;
+    padding: 5%;
+}

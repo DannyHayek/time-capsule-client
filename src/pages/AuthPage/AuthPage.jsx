@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
+import './AuthPage.css';
+import '../global.css';
+import BackgroundImage from '../../components/auth/Background';
 
 const AuthPage = () => {
   return (
-    <div>auth page</div>
+    <BackgroundImage />
   )
 }
 
