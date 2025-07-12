@@ -2,7 +2,7 @@ import React from 'react'
 
 const LandingIntro = () => {
   return (
-    <div>
+    <div className='flex flex-center'>
         <p>
             Welcome to the Temporal River!
             <br></br><br></br>

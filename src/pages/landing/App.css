@@ -6,6 +6,7 @@
 
 hr {
   max-width: 80%;
+  margin: auto;
 }
 
 img {
@@ -25,19 +26,26 @@ p {
   text-decoration: underline;
   font-weight: bold;
   border: none;
-  font-size: 40px;
+  font-size: calc(28px + 0.390625vw);
   margin: 5% 0 3%;
 }
 
 .landing-shore-btn:hover {
   cursor: pointer;
-  text-decoration: solid;
+  text-decoration: none;
 }
 
 .auth-btn {
   width: 30rem;
   height: 8rem;
   border-radius: 60px;
-  font-size: 40px;
+  font-size: calc(28px + 0.390625vw);
   margin: 2%;
+}
+
+@media (max-width: 700px) {
+  .auth-btn {
+    width: 20rem;
+    height: 4rem;
+  }
 }
