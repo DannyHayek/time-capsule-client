@@ -2,21 +2,20 @@ import React from 'react'
 import AuthButton from './AuthButton'
 import EmailInput from './EmailInput'
 import PasswordInput from './PasswordInput'
+import AlterAuth from './AlterAuth'
 
 const LoginForm = () => {
   return (
-    <div>
-        <section>
-          <form className='flex column flex-center'>
+    <div className='flex column flex-center auth-form-btn'>
+        <form className='flex column flex-center auth-form'>
             <EmailInput />
 
             <PasswordInput />
-          </form>
-        </section>
-        
-        <section>
-          <AuthButton />
-        </section>
+        </form>
+
+        <AuthButton />
+
+        <AlterAuth />
     </div>
   )
 }

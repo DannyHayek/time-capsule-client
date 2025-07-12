@@ -4,7 +4,7 @@ const EmailInput = () => {
   return (
     <div className='flex column'>
         <label className='auth-label'>Email</label>
-        <input className='font' placeholder='Enter your email...'></input>
+        <input className='font auth-input' placeholder='Enter your email...'></input>
     </div>
   )
 }
