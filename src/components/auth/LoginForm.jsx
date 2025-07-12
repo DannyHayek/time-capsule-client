@@ -1,4 +1,5 @@
 import React from 'react'
+import AuthButton from './AuthButton'
 
 const LoginForm = () => {
   return (
@@ -13,9 +14,7 @@ const LoginForm = () => {
         </section>
         
         <section>
-          <button>
-            Login
-          </button>
+          <AuthButton />
         </section>
     </div>
   )
