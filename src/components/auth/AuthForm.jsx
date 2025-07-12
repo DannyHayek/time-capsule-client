@@ -7,19 +7,32 @@ import NameInput from './NameInput'
 
 const AuthForm = () => {
     const [authType, setAuth] = useState(localStorage.getItem("authType"));
-    console.log(authType);
+
+    const [currentEmail, setEmail] = useState("");
+    const [currentPass, setPass] = useState("");
+    const [currentName, setName] = useState("");
+
+
+  const handleInput = () => {
+    console.log(currentEmail);
+    console.log(currentPass);
+    if (authType === "Signup") {
+      console.log(currentName);
+    }
+  }
+
 
   return (
     <div className='flex column flex-center auth-form-btn'>
         <form className='flex column flex-center auth-form'>
-            {authType === "Signup" && <NameInput />}
+            {authType === "Signup" && <NameInput setName={setName}/>}
 
-            <EmailInput />
+            <EmailInput setEmail={setEmail}/>
 
-            <PasswordInput />
+            <PasswordInput setPass={setPass}/>
         </form>
 
-        <AuthButton />
+        <AuthButton handleInput={handleInput}/>
 
         <AlterAuth authType={authType} setAuth={setAuth}/>
     </div>

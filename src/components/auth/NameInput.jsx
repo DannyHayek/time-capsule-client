@@ -1,10 +1,10 @@
 import React from 'react'
 
-const NameInput = () => {
+const NameInput = ({ setName }) => {
   return (
     <div className='flex column'>
         <label className='auth-label'>Name</label>
-        <input className='font auth-input' placeholder='Enter your name...'></input>
+        <input onChange={e => setName(e.target.value)} className='font auth-input' placeholder='Enter your name...'></input>
     </div>
   )
 }

@@ -1,10 +1,12 @@
 import React from 'react'
 
-const EmailInput = () => {
+const EmailInput = ({ setEmail }) => {
+
+
   return (
     <div className='flex column'>
         <label className='auth-label'>Email</label>
-        <input className='font auth-input' placeholder='Enter your email...'></input>
+        <input onChange={e => setEmail(e.target.value)} className='font auth-input' placeholder='Enter your email...'></input>
     </div>
   )
 }

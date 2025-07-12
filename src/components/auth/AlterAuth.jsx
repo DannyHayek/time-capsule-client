@@ -3,8 +3,6 @@ import { useNavigate } from 'react-router-dom';
 
 const AlterAuth = ( { authType , setAuth } ) => {
 
-    console.log(authType);
-
     let text = "Don't have an account?";
     let link = "Signup!";
 
