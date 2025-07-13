@@ -2,7 +2,9 @@ import React from 'react'
 
 const ViewMessage = () => {
   return (
-    <div>ViewMessage</div>
+    <div>
+        {localStorage.getItem("currentMessage")}
+    </div>
   )
 }
 
