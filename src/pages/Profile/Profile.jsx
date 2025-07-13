@@ -7,6 +7,7 @@ const Profile = () => {
   return (
     <div>
       <ProfileTitle />
+      
       <StatCardsSection />
     </div>
   )
