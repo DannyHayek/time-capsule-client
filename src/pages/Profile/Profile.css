@@ -1,0 +1,35 @@
+.profile-title {
+    font-size: calc(32px + 0.390625vw);
+    font-weight: bold;
+    margin: 2% 0;
+}
+
+.profile-subtitle {
+    font-size: calc(22px + 0.390625vw);
+    font-weight: normal;
+    margin-bottom: 2%;
+}
+
+.number-messages {
+    font-size: calc(34px + 0.390625vw);
+    padding: 0 5%;
+    font-weight: bold;
+}
+
+.stat-card {
+    background-color: #BDBDBD;
+}
+
+.stat-cards-section {
+    width: 80%;
+}
+
+.stat-card-title {
+    font-size: calc(22px + 0.390625vw);
+    padding: 4% 0;
+}
+
+.stat-card-num {
+    font-size: calc(28px + 0.390625vw);
+    padding: 4% 0;
+}
