@@ -6,32 +6,32 @@ const Nav = () => {
 
   return (
     <div>
-        <nav>
-            <button onClick={() => {
+        <nav className='flex space-evenly navbar'>
+            <button className='navBtn' onClick={() => {
             navigate("/");
             }}>
                 Logo
             </button>
 
-            <button onClick={() => {
+            <button className='navBtn' onClick={() => {
             navigate("/profile");
              }}>
                 Profile
             </button>
 
-            <button onClick={() => {
+            <button className='navBtn' onClick={() => {
             navigate("/userStream");
              }}>
                 Your Stream
             </button>
 
-            <button onClick={() => {
+            <button className='navBtn' onClick={() => {
             navigate("/messageShore");
              }}>
                 Message Shore
             </button>
 
-            <button onClick={() => {
+            <button className='navBtn' onClick={() => {
             navigate("/authPage");
              }}>
                 Logout
