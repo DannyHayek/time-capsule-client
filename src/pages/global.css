@@ -88,3 +88,10 @@
     text-decoration: underline;
     cursor: pointer;
 }
+
+@media (max-width:600px) {
+    .navBtn {
+        font-size: calc(15px + 0.390625vw);
+        margin: 1.5%;
+    }
+}
