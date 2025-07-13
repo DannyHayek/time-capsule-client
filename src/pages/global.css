@@ -89,6 +89,14 @@
     cursor: pointer;
 }
 
+.bottle-message-button {
+    width: 15dvw;
+    height: 7dvh;
+    border-radius: 60px;
+    font-size: calc(18px + 0.390625vw);
+    margin-top: 1.5%;
+}
+
 @media (max-width:600px) {
     .navBtn {
         font-size: calc(15px + 0.390625vw);
