@@ -20,7 +20,7 @@ const Nav = () => {
             </button>
 
             <button className='navBtn' onClick={() => {
-            navigate("/userStream");
+            navigate("/messageStream");
              }}>
                 Your Stream
             </button>
