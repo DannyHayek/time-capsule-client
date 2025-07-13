@@ -41,6 +41,10 @@
     justify-content: end;
 }
 
+.stream-info-title {
+    margin-bottom: 5%;
+}
+
 .share-icon {
     width: 24px;
 }

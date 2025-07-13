@@ -15,22 +15,22 @@ const MessageStreamCard = ({ num, bottled, recieved, status, tag }) => {
 
         <div className='message-stream-info'>
           <article>
-            <h4>Date Bottled</h4>
+            <h4 className='stream-info-title'>Bottled</h4>
             <p>{bottled}</p>
           </article>
 
           <article>
-            <h4>Date Recieved</h4>
+            <h4 className='stream-info-title'>Recieved</h4>
             <p>{recieved}</p>
           </article>
 
           <article>
-            <h4>Status</h4>
+            <h4 className='stream-info-title'>Status</h4>
             <p>{status}</p>
           </article>
 
           <article>
-            <h4>Tag</h4>
+            <h4 className='stream-info-title'>Tag</h4>
             <p>{tag}</p>
           </article>
         </div>
