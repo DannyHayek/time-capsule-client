@@ -4,6 +4,7 @@ import AuthPage from '../../pages/AuthPage/AuthPage'
 import Landing from '../../pages/Landing/Landing'
 import MessageShore from '../../pages/MessageShore/MessageShore'
 import Profile from '../../pages/Profile/Profile'
+import BottleMessage from '../../pages/BottleMessage/BottleMessage'
 
 const PageRoutes = () => {
   return (
@@ -12,6 +13,7 @@ const PageRoutes = () => {
       <Route path="/authPage" element={<AuthPage />} />
       <Route path="/messageShore" element={<MessageShore />} />
       <Route path="/profile" element={<Profile />} />
+      <Route path="/bottleMessage" element={<BottleMessage />} />
     </Routes>
   )
 }

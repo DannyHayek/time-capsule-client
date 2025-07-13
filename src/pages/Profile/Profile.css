@@ -1,0 +1,46 @@
+.profile-title {
+    font-size: calc(32px + 0.390625vw);
+    font-weight: bold;
+    margin: 2% 0;
+}
+
+.profile-subtitle {
+    font-size: calc(22px + 0.390625vw);
+    font-weight: normal;
+}
+
+.number-messages {
+    font-size: calc(34px + 0.390625vw);
+    padding: 0 5%;
+    font-weight: bold;
+}
+
+.stat-card {
+    background-color: #BDBDBD;
+    margin: 4% 5%;
+    border: 2px solid black;
+    width: 20%;
+    border-radius: 36px;
+    height: 35dvh;
+    justify-content: space-around;
+    min-width: 200px;
+}
+
+.stat-cards-section {
+    width: 100%;
+    height: 80%;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-basis: 1;
+}
+
+.stat-card-title {
+    font-size: calc(24px + 0.390625vw);
+    padding: 0% 0;
+    text-wrap: wrap;
+}
+
+.stat-card-num {
+    font-size: calc(28px + 0.390625vw);
+    padding: 0% 0;
+}
