@@ -1,0 +1,44 @@
+.view-message-page {
+    align-items: center;
+}
+
+.view-message-title {
+    margin: 4% 0 3%;
+    font-size: calc(22px + 0.390625vw);
+}
+
+.view-message-card {
+    background-color: #BDBDBD;
+    width: 80%;
+    border-radius: 30px;
+    align-items: center;
+    height: fit-content;
+    min-height: 50dvh;
+    margin-bottom: 2%;
+}
+
+.view-message-info {
+    margin: 1% 0 1%;
+    justify-content: space-evenly;
+    width: 90dvw;
+}
+
+.view-message-body {
+    width: 80dvw;
+}
+
+.view-info-title {
+    font-size: calc(16px + 0.390625vw);
+    margin-bottom: 1%;
+}
+
+.view-info-title-detail {
+    font-size: calc(12px + 0.390625vw);
+}
+
+.message-body {
+    margin: 4% 0;
+    text-align: left;
+    width: 75dvw;
+    font-size: calc(11px + 0.390625vw);
+}
