@@ -3,7 +3,7 @@ import React from 'react'
 const ViewMessageTitle = () => {
 
     return (
-    <div>
+    <div className='font view-message-title'>
         <h2>{localStorage.getItem("currentName")} - Bottle #{JSON.parse(localStorage.getItem("currentMessage"))["num"]}</h2>
     </div>
   )

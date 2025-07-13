@@ -4,7 +4,7 @@ import MessageBody from './MessageBody'
 
 const ViewMessageCard = () => {
   return (
-    <div className='flex column view-message-body'>
+    <div className='flex column view-message-card'>
         <MessageInformation />
         <MessageBody />
     </div>

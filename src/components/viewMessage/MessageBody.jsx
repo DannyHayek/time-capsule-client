@@ -4,7 +4,7 @@ const MessageBody = () => {
 
   return (
     <div>
-        <p>
+        <p className='message-body'>
             {JSON.parse(localStorage.getItem("currentMessage"))["body"]};
         </p>
     </div>
