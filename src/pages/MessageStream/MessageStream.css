@@ -27,11 +27,50 @@
     border-radius: 36px;
     height: 24dvh;
     justify-content: space-around;
-    min-width: 150px;
+    align-items: center;
+    min-width: 170px;
 }
 
 .message-stream-info {
     display: grid;
     grid-template-columns: auto auto;
     gap: 2%;
+}
+
+.message-stream-card-title {
+    justify-content: end;
+}
+
+.share-icon {
+    width: 24px;
+}
+
+.view-message-stream-btn {
+    width: 70%;
+    height: 15%;
+    border-radius: 30px;
+}
+
+@media (max-width:900px) {
+    .message-stream-section {
+        grid-template-columns: auto auto auto auto;
+    }
+}
+
+@media (max-width:750px) {
+    .message-stream-section {
+        grid-template-columns: auto auto auto;
+    }
+}
+
+@media (max-width:600px) {
+    .message-stream-section {
+        grid-template-columns: auto auto;
+    }
+}
+
+@media (max-width:400px) {
+    .message-stream-section {
+        grid-template-columns: auto;
+    }
 }

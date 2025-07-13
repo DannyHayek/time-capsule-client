@@ -6,6 +6,7 @@ import MessageShore from '../../pages/MessageShore/MessageShore'
 import Profile from '../../pages/Profile/Profile'
 import BottleMessage from '../../pages/BottleMessage/BottleMessage'
 import MessageStream from '../../pages/MessageStream/MessageStream'
+import ViewMessage from '../../pages/ViewMessage/ViewMessage'
 
 const PageRoutes = () => {
   return (
@@ -16,6 +17,7 @@ const PageRoutes = () => {
       <Route path="/profile" element={<Profile />} />
       <Route path="/bottleMessage" element={<BottleMessage />} />
       <Route path="/messageStream" element={<MessageStream />} />
+      <Route path="/viewMessage" element={<ViewMessage />} />
     </Routes>
   )
 }
