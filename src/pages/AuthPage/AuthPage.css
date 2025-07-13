@@ -22,7 +22,7 @@
 
 .auth-form {
     width: 100%;
-    padding-left: 13%;
+    padding-left: 14%;
     margin-bottom: 4%;
 }
 
@@ -38,10 +38,16 @@
 .auth-input {
     width: 65%;
     border-radius: 113.5px;
-    padding: 3.5%;
-    font-size: calc(15px + 0.390625vw);
+    padding: 3%;
+    font-size: calc(12px + 0.390625vw);
     margin-top: 5%;
     margin-bottom: 2%;
+}
+
+.auth-input:focus {
+    background-color: white;
+    opacity: 100%;
+    color: #154866;
 }
 
 .auth-label-input-div {
@@ -52,7 +58,7 @@
     width: 55%;
     height: 5rem;
     border-radius: 60px;
-    font-size: calc(30px + 0.390625vw);
+    font-size: calc(22px + 0.390625vw);
     margin: 8%;
 }
 
