@@ -9,7 +9,7 @@ const BottleMessageButton = () => {
         <hr></hr>
         
         <button className='primary-btn bottle-message-button' onClick={() => {
-            navigate("/createMessage");
+            navigate("/bottleMessage");
              }}>
                 Bottle a Message!
             </button>
