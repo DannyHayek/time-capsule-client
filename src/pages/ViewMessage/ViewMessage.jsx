@@ -1,9 +1,12 @@
 import React from 'react'
+import ViewMessageTitle from '../../components/viewMessage/ViewMessageTitle'
+import ViewMessageCard from '../../components/viewMessage/ViewMessageCard'
 
 const ViewMessage = () => {
   return (
     <div>
-        {localStorage.getItem("currentMessage")}
+        <ViewMessageTitle />
+        <ViewMessageCard />
     </div>
   )
 }

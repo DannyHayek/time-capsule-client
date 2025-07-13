@@ -2,8 +2,16 @@ import React, { useState } from 'react'
 import shareIcon from '../../assets/Icons/share-trans.png'
 import { useNavigate } from 'react-router-dom'
 
-const MessageStreamCard = ({ num, bottled, recieved, status, tag }) => {
+const MessageStreamCard = ({ num, bottled, recieved, status, tag, body }) => {
   const navigate = useNavigate();
+  const currentMessage = {
+    "num": num,
+    "bottled": bottled,
+    "recieved": recieved,
+    "status": status,
+    "tag": tag,
+    "body": body
+  }
   // console.log(num);
   return (
     <div className='flex column space-evenly message-stream-card'>
@@ -37,7 +45,7 @@ const MessageStreamCard = ({ num, bottled, recieved, status, tag }) => {
         
 
         <button className='primary-btn font view-message-stream-btn' onClick={() => {
-          localStorage.setItem("currentMessage", num);
+          localStorage.setItem("currentMessage", JSON.stringify(currentMessage));
           navigate("/viewMessage");
           }} >
           View
