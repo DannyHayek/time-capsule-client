@@ -3,12 +3,12 @@ import React from 'react'
 const BottleMessageButton = ({bottleMessage}) => {
   return (
     <div>
-        <hr></hr>
+        <hr className='horizontal-rule-bottle'></hr>
         
-        <button className='primary-btn bottle-message-button' onClick={() => {
+        <button className='primary-btn bottle-message-button bottle-message-bottle-button' onClick={() => {
             bottleMessage();
              }}>
-                Bottle a Message!
+                Bottle Message!
             </button>
     </div>
   )

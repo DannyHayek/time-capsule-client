@@ -2,10 +2,10 @@ import React from 'react'
 
 const BottleMessageTag = ({setTag}) => {
   return (
-    <div>
+    <div className='flex column status-label-buttons'>
         <label htmlFor="message-tag" className='bottle-message-label flex column'>Tag</label>
 
-        <form onChange={e => setTag(e.target.value)} className='flex column'>
+        <form onChange={e => setTag(e.target.value)} className='flex column radio-form'>
           <div>
             <input type="radio" id="happy" name="tag" value="Happy"></input>
             <label htmlFor="happy">Happy</label>

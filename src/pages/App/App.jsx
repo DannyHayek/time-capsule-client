@@ -9,13 +9,15 @@ import BottleMessageButton from '../../components/shared/BottleMessageButton';
 function App() {
   const location = useLocation();
 
-  const discluded = ["/", "/authPage"];
+  const discludedNav = ["/", "/authPage"];
+  const discludedButton = ["/", "/authPage", "/bottleMessage"]
+
 
   return (
     <div className="App">
-      {discluded.every((route) => route !== location.pathname) && <Nav />}
+      {discludedNav.every((route) => route !== location.pathname) && <Nav />}
       <PageRoutes />
-      {discluded.every((route) => route !== location.pathname) && <BottleMessageButton />}
+      {discludedButton.every((route) => route !== location.pathname) && <BottleMessageButton />}
     </div>
   );
 }
