@@ -3,8 +3,8 @@ import React from 'react'
 const BottleMessageDate = () => {
   return (
     <div>
-        <h3>Delivery Date</h3>
-        <p>date</p>
+        <label htmlFor="delivery-date" className='bottle-message-label flex column'>Delivery Date</label>
+        <input type='date' className='delivery-date-picker'></input>
     </div>
   )
 }

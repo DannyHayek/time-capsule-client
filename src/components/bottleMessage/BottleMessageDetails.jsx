@@ -6,7 +6,7 @@ import BottleMessageSurprise from './BottleMessageSurprise'
 
 const BottleMessageDetails = () => {
   return (
-    <div>
+    <div className='flex space-evenly bottle-message-details'>
         <BottleMessageDate />
         <BottleMessageStatus />
         <BottleMessageTag />

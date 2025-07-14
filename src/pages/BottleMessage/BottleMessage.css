@@ -1,0 +1,47 @@
+.bottle-message {
+    align-items: center;
+}
+
+.bottle-message-title {
+    margin: 2% 0;
+    font-size: calc(22px + 0.390625vw);
+}
+
+.bottle-message-card {
+    background-color: #bdbdbd;
+    border: 2px solid black;
+    border-radius: 30px;
+    width: 80%;
+    height: 50dvh;
+    margin-bottom: 3%;
+}
+
+.bottle-message-details {
+    width: 100%;
+    height: 20%;
+    margin: 1% 0;
+    align-items: center;
+}
+
+.delivery-date-picker {
+
+}
+
+.bottle-message-label {
+    font-size: calc(16px + 0.390625vw);
+    margin-bottom: 10%;
+    font-weight: bold;
+}
+
+.bottle-message-body {
+    width: 80%;
+    height: 60%;
+}
+
+.bottle-message-body-input {
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    border-radius: 30px;
+    padding: 1.5%;
+}
