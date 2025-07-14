@@ -68,3 +68,19 @@
 .status-label-buttons {
     align-items: center;
 }
+
+@media (max-width:700px) {
+    .bottle-message-label {
+        font-size: calc(10px + 0.390625vw);
+        margin-bottom: 10%;
+        font-weight: bold;
+    }
+}
+
+@media (max-width:500px) {
+    .bottle-message-details {
+        width: 100%;
+        height: fit-content;
+        flex-wrap: wrap;
+    }
+}
