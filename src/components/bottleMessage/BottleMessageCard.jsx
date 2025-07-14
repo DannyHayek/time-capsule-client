@@ -2,11 +2,11 @@ import React from 'react'
 import BottleMessageDetails from './BottleMessageDetails'
 import BottleMessageBody from './BottleMessageBody'
 
-const BottleMessageCard = () => {
+const BottleMessageCard = ({setDelivery, setStatus, setTag, setSurprise, setBody}) => {
   return (
     <div className='flex column bottle-message-card'>
-        <BottleMessageDetails />
-        <BottleMessageBody />
+        <BottleMessageDetails setDelivery={setDelivery} setStatus={setStatus} setTag={setTag} setSurprise={setSurprise}/>
+        <BottleMessageBody setBody={setBody}/>
     </div>
   )
 }

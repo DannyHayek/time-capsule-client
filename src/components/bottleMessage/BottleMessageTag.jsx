@@ -1,11 +1,11 @@
 import React from 'react'
 
-const BottleMessageTag = () => {
+const BottleMessageTag = ({setTag}) => {
   return (
     <div>
         <label htmlFor="message-tag" className='bottle-message-label flex column'>Tag</label>
 
-        <form className='flex column'>
+        <form onChange={e => setTag(e.target.value)} className='flex column'>
           <div>
             <input type="radio" id="happy" name="tag" value="Happy"></input>
             <label htmlFor="happy">Happy</label>

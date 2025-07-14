@@ -1,24 +1,24 @@
 import React from 'react'
 
-const BottleMessageStatus = () => {
+const BottleMessageStatus = ({setStatus}) => {
   return (
     <div>
         <label htmlFor="message-status" className='bottle-message-label flex column'>Message Status</label>
 
-        <form className='flex column'>
+        <form onChange={e => setStatus(e.target.value)} className='flex column'>
           <div>
-            <input type="radio" id="html" name="fav_language" value="HTML"></input>
-            <label htmlFor="html">Public</label>
+            <input type="radio" id="public" name="fav_language" value="Public"></input>
+            <label htmlFor="public">Public</label>
           </div>
 
           <div>
-            <input type="radio" id="css" name="fav_language" value="CSS"></input>
-            <label htmlFor="css">Unlisted</label>
+            <input type="radio" id="unlisted" name="fav_language" value="Unlisted"></input>
+            <label htmlFor="unlisted">Unlisted</label>
           </div>
           
           <div>
-            <input type="radio" id="javascript" name="fav_language" value="JavaScript"></input>
-            <label htmlFor="javascript">Private</label>
+            <input type="radio" id="private" name="fav_language" value="Private"></input>
+            <label htmlFor="private">Private</label>
           </div>
           
         </form>
