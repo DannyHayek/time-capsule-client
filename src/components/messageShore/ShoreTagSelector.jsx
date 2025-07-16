@@ -1,8 +1,12 @@
 import React from 'react'
 
-const ShoreTagSelector = () => {
+const ShoreTagSelector = ({ tag }) => {
   return (
-    <div>ShoreTagSelector</div>
+    <div>
+        <button>
+            {tag}
+        </button>
+    </div>
   )
 }
 
