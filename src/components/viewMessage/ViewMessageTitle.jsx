@@ -4,7 +4,7 @@ const ViewMessageTitle = () => {
 
     return (
     <div className='font view-message-title'>
-        <h2>{localStorage.getItem("currentName")} - Bottle #{JSON.parse(localStorage.getItem("currentMessage"))["num"]}</h2>
+        <h2>{JSON.parse(localStorage.getItem("currentMessage"))["user"]} - Bottle #{JSON.parse(localStorage.getItem("currentMessage"))["num"]}</h2>
     </div>
   )
 }

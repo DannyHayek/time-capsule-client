@@ -2,10 +2,11 @@ import React, { useState } from 'react'
 import shareIcon from '../../assets/Icons/share-trans.png'
 import { useNavigate } from 'react-router-dom'
 
-const MessageStreamCard = ({ num, bottled, recieved, status, tag, body }) => {
+const MessageStreamCard = ({ num, user, bottled, recieved, status, tag, body }) => {
   const navigate = useNavigate();
   const currentMessage = {
     "num": num,
+    "user": user,
     "bottled": bottled,
     "recieved": recieved,
     "status": status,
