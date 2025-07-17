@@ -68,9 +68,9 @@
     width: 100%;
     height: 12dvh;
     align-items: center;
-    background-color: #998A5B;
-    background-image: url(../assets/Logo/flowing-river.png);
-    background-repeat: no-repeat;
+    background-color: #154866;
+    /* background-image: url(../assets/Logo/flowing-river.png);
+    background-repeat: no-repeat; */
     background-position: center top;
     background-size: cover;
     border-bottom: 2px solid black;
@@ -82,11 +82,17 @@
     border: none;
     font-size: calc(22px + 0.390625vw);
     margin: 2%;
+    color: white;
 }
 
 .navBtn:hover {
     text-decoration: underline;
     cursor: pointer;
+}
+
+.nav-logo {
+    width: 20dvw;
+    margin: 0px;
 }
 
 .bottle-message-button {

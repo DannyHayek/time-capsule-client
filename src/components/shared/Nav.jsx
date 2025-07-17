@@ -1,5 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import smallLogo from '../../assets/Logo/temporal_river_logo_no_river_white_text.png';
+
 
 const Nav = () => {
     const navigate = useNavigate();
@@ -7,10 +9,10 @@ const Nav = () => {
   return (
     <div>
         <nav className='flex space-evenly navbar'>
-            <button className='navBtn' onClick={() => {
+            <button className='navBtn nav-logo' onClick={() => {
             navigate("/");
             }}>
-                Logo
+                <img className='nav-logo' src={smallLogo} alt='Temporal River Logo'></img>
             </button>
 
             <button className='navBtn' onClick={() => {
