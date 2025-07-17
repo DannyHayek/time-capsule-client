@@ -60,6 +60,10 @@
     .message-shore-section {
         grid-template-columns: auto auto auto auto;
     }
+
+    .tag-selector-div {
+        width: 80%;
+    }
 }
 
 @media (max-width:750px) {
@@ -71,6 +75,10 @@
 @media (max-width:600px) {
     .message-shore-section {
         grid-template-columns: auto auto;
+    }
+
+    .tag-selector-div {
+        width: 100%;
     }
 }
 
