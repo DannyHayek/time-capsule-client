@@ -7,7 +7,7 @@ import ShoreTags from '../../components/messageShore/ShoreTags';
 
 const MessageShore = () => {
   return (
-    <div className='flex column'>
+    <div className='flex column message-shore'>
       <ShoreTitle />
       <ShoreTags />
       <ShoreMessages />

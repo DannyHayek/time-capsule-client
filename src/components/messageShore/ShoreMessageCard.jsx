@@ -1,16 +1,26 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 
-const ShoreMessageCard = () => {
+const ShoreMessageCard = ({ num, user, bottled, recieved, status, tag, body }) => {
     const navigate = useNavigate();
+
+    const currentMessage = {
+    "num": num,
+    "user": user,
+    "bottled": bottled,
+    "recieved": recieved,
+    "status": status,
+    "tag": tag,
+    "body": body
+  }
 
   return (
     <div className='flex column message-stream-card'>
-        <h3>Username</h3>
-        <h4>Tag</h4>
-        <p>Message Text</p>
-        <button className='primary-btn font view-message-stream-btn' onClick={() => {
-            // localStorage.setItem("currentMessage", JSON.stringify(currentMessage));
+        <h3>{user}</h3>
+        <h4>{tag}</h4>
+        <p className="shore-card-text">{body}</p>
+        <button className='primary-btn font view-message-stream-btn view-message-shore-btn' onClick={() => {
+            localStorage.setItem("currentMessage", JSON.stringify(currentMessage));
             navigate("/viewMessage");
         }} >
                 View
