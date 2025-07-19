@@ -6,6 +6,7 @@ import AlterAuth from './AlterAuth'
 import NameInput from './NameInput'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import CreateAPI from '../shared/CreateAPI'
 
 const AuthForm = () => {
     const [authType, setAuth] = useState(localStorage.getItem("authType"));
@@ -32,9 +33,13 @@ const AuthForm = () => {
   }
 
   const authenticate = () => {
-    axios.post("http://127.0.0.1:8000/api/0.1/guest/login", {"email": currentEmail, "password": currentPass})
-    .then(response => localStorage.setItem("currentUser", response.data["payload"]));
-    // navigate("/Profile");
+    const api = CreateAPI("/guest/" + authType.toLowerCase());
+
+    axios.post(api, {"email": currentEmail, "password": currentPass, "name":currentName})
+    .then(response => localStorage.setItem("user", JSON.stringify((response.data["payload"]))))
+    .then(console.log(JSON.parse(localStorage.getItem("user"))));
+
+    navigate("/Profile");
   }
 
 
