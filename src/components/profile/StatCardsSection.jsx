@@ -1,12 +1,12 @@
 import React from 'react'
 import StatCard from './StatCard'
 
-const StatCardsSection = () => {
+const StatCardsSection = ({ recieved, privateNum, publicNum, unlisted }) => {
   return (
     <div className='flex spread-evenly stat-cards-section'>
-        <StatCard statType={"Messages Recieved"} statNum={100}/>
-        <StatCard statType={"Private Messages"} statNum={45}/>
-        <StatCard statType={"Public Messages"} statNum={12}/>
+        <StatCard statType={"Messages Recieved"} statNum={recieved}/>
+        <StatCard statType={"Private Messages"} statNum={privateNum}/>
+        <StatCard statType={"Public Messages"} statNum={publicNum}/>
     </div>
   )
 }
