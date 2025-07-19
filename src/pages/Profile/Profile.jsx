@@ -21,7 +21,7 @@ const Profile = () => {
       headers: {
         'Authorization': `bearer ${token}`,
       }
-    }).then(response => console.log(response.data));
+    }).then(response => setStats(response.data["payload"]));
   }
   
   useEffect(() => {
@@ -30,9 +30,9 @@ const Profile = () => {
 
   return (
     <div>
-      <ProfileTitle />
+      <ProfileTitle pending = {userStats["pending"]}/>
       
-      <StatCardsSection />
+      <StatCardsSection userStats/>
     </div>
   )
 }
