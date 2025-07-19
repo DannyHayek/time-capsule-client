@@ -3,6 +3,11 @@ import BottleMessageTitle from '../../components/bottleMessage/BottleMessageTitl
 import BottleMessageCard from '../../components/bottleMessage/BottleMessageCard'
 import './BottleMessage.css'
 import BottleMessageButton from '../../components/bottleMessage/BottleMessageButton'
+import axios from 'axios'
+import CreateAPI from '../../components/shared/CreateAPI'
+import GetToken from '../../components/shared/GetToken'
+import GetUserID from '../../components/shared/GetUserID'
+import { useNavigate } from 'react-router-dom'
 
 const BottleMessage = () => {
   const [bottleDelivery, setDelivery] = useState("");
@@ -10,6 +15,8 @@ const BottleMessage = () => {
   const [bottleTag, setTag] = useState("");
   const [bottleSurprise, setSurprise] = useState("");
   const [bottleBody, setBody] = useState("");
+
+  const navigate = useNavigate();
 
   const props = [setDelivery, setStatus, setTag, setSurprise, setBody];
 
@@ -19,6 +26,36 @@ const BottleMessage = () => {
     console.log(bottleTag);
     console.log(bottleSurprise);
     console.log(bottleBody);
+
+    if (bottleTag == null) {
+      setTag(1);
+    } 
+
+    if (bottleStatus == null) {
+      setStatus("Public");
+    } 
+
+    if (bottleSurprise == null) {
+      setSurprise(0);
+    } 
+
+    const api = CreateAPI("/user/create_message");
+
+    const userID = GetUserID();
+    const token = GetToken();
+
+    axios.post(api, {
+      "user_id" : userID,
+      "tag_id" : bottleTag,
+      "delivery_date" : bottleDelivery,
+      "status" : bottleStatus,
+      "isSurprise" : 0,
+      "text" : bottleBody,
+    }, {
+      headers: {
+        'Authorization': `bearer ${token}`,
+      }
+    }).then(navigate("/Profile"));
   }
 
   return (
