@@ -32,7 +32,7 @@ const Profile = () => {
     <div>
       <ProfileTitle pending = {userStats["pending"]}/>
       
-      <StatCardsSection userStats/>
+      <StatCardsSection recieved={userStats["total"]} publicNum={userStats["public"]} privateNum={userStats["private"]} unlisted={userStats["unlisted"]}/>
     </div>
   )
 }
