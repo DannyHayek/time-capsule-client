@@ -18,11 +18,6 @@ const AuthForm = () => {
     const navigate = useNavigate();
 
   const handleInput = () => {
-    console.log(currentEmail);
-    // localStorage.setItem("currentEmail", currentEmail);
-
-    console.log(currentPass);
-    // localStorage.setItem("currentPass", currentPass);
 
     if (authType === "Signup") {
       console.log(currentName);
@@ -37,9 +32,8 @@ const AuthForm = () => {
 
     axios.post(api, {"email": currentEmail, "password": currentPass, "name":currentName})
     .then(response => localStorage.setItem("user", JSON.stringify((response.data["payload"]))))
-    .then(console.log(JSON.parse(localStorage.getItem("user"))));
-
-    navigate("/Profile");
+    .then(console.log(JSON.parse(localStorage.getItem("user"))))
+    .then(navigate("/Profile"));
   }
 
 
