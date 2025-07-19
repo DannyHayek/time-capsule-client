@@ -6,6 +6,8 @@ import { useEffect } from 'react';
 import CreateAPI from '../../components/shared/CreateAPI';
 import axios from 'axios';
 import { useState } from 'react';
+import GetUserID from '../../components/shared/GetUserID';
+import GetToken from '../../components/shared/GetToken';
 
 const Profile = () => {
 
@@ -14,8 +16,8 @@ const Profile = () => {
   const fetchStats = () => {
     const api = CreateAPI("/user/user_info");
 
-    const userID = JSON.parse(localStorage.getItem("user"))["id"];
-    const token = JSON.parse(localStorage.getItem("user"))["token"];
+    const userID = GetUserID();
+    const token = GetToken();
 
     axios.post(api, {"id" : userID}, {
       headers: {
