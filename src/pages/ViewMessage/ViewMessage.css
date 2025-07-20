@@ -42,3 +42,16 @@
     width: 75dvw;
     font-size: calc(11px + 0.390625vw);
 }
+
+.download-message-btn {
+    background: none;
+    border: none;
+}
+
+.download-message-btn:hover {
+    cursor: pointer;
+}
+
+.download-icon {
+    width: 20px;
+}

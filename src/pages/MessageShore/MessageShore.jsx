@@ -49,10 +49,6 @@ const MessageShore = () => {
     console.log(activeTags);
   }
 
-  const changeFilter = () => {
-
-  }
-
   useEffect(() => {
       getAllMessages();
     }, []);
