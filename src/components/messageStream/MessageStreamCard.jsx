@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import shareIcon from '../../assets/Icons/share-trans.png'
 import { useNavigate } from 'react-router-dom'
 
-const MessageStreamCard = ({ num, user, bottled, recieved, status, tag, body }) => {
+const MessageStreamCard = ({ num, user, bottled, recieved, status, tag, country, body }) => {
   const navigate = useNavigate();
   const currentMessage = {
     "num": num,
@@ -16,9 +16,12 @@ const MessageStreamCard = ({ num, user, bottled, recieved, status, tag, body }) 
   // console.log(num);
   return (
     <div className='flex column space-evenly message-stream-card'>
-        <div className='flex message-stream-card-title'>
+        <div className='flex column message-stream-card-title'>
+          <div className='flex'>
             <h3>Bottle # {num} </h3>
             <img className='share-icon' src={shareIcon} alt="Share icon"></img>
+          </div>
+            <h5>{country}</h5>
         </div>
         
 
