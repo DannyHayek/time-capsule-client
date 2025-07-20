@@ -21,41 +21,47 @@ const BottleMessage = () => {
   const props = [setDelivery, setStatus, setTag, setSurprise, setBody];
 
   const bottleMessage = () => {
-    console.log(bottleDelivery);
-    console.log(bottleStatus);
-    console.log(bottleTag);
-    console.log(bottleSurprise);
-    console.log(bottleBody);
+    // console.log(bottleDelivery);
+    // console.log(bottleStatus);
+    // console.log(bottleTag);
+    // console.log(bottleSurprise);
+    // console.log(bottleBody);
 
-    if (bottleTag == null) {
+    if (bottleDelivery == "") {
+      let today = new Date().toISOString().slice(0, 10)
+      setDelivery(today);
+    } 
+
+    if (bottleTag == "") {
       setTag(1);
     } 
 
-    if (bottleStatus == null) {
+    if (bottleStatus == "") {
       setStatus("Public");
     } 
 
-    if (bottleSurprise == null) {
+    if (bottleSurprise == "") {
       setSurprise(0);
     } 
+
 
     const api = CreateAPI("/user/create_message");
 
     const userID = GetUserID();
     const token = GetToken();
 
-    axios.post(api, {
-      "user_id" : userID,
-      "tag_id" : bottleTag,
-      "delivery_date" : bottleDelivery,
-      "status" : bottleStatus,
-      "isSurprise" : 0,
-      "text" : bottleBody,
-    }, {
-      headers: {
-        'Authorization': `bearer ${token}`,
-      }
-    }).then(navigate("/Profile"));
+    // axios.post(api, {
+    //   "user_id" : userID,
+    //   "tag_id" : bottleTag,
+    //   "delivery_date" : bottleDelivery,
+    //   "status" : bottleStatus,
+    //   "isSurprise" : 0,
+    //   "text" : bottleBody,
+    // }, {
+    //   headers: {
+    //     'Authorization': `bearer ${token}`,
+    //   }
+    // }).then(navigate("/Profile"));
   }
 
   return (
