@@ -14,7 +14,7 @@ const ShoreTagSelector = ({ tag , addTag , removeTag }) => {
           localStorage.setItem(tag, 1);
           addTag(tag);
         }
-        console.log(tag, localStorage.getItem(tag))
+        // console.log(tag, localStorage.getItem(tag))
         }} >
           {tag}
       </button>

@@ -18,31 +18,48 @@ const MessageShore = () => {
     "Hopeful" : 0,
     "Neutral" : 0,
   });
+  const [activeMessages, setActiveMessages] = useState();
 
   const getAllMessages = () => {
     const api = CreateAPI("/guest/message_shore");
 
-    axios.get(api).then(response => setShoreMessages(response.data["payload"]));
+    axios.get(api).then(response => setShoreMessages(response.data["payload"])).then(setActiveMessages(shoreMessages)).then(console.log(activeMessages));
   }
 
   const addTag = (tagname) => {
-    const tempTags = activeTags;
+    const tempTags = {};
+
+    for (let t in activeTags) {
+      tempTags[t] = activeTags[t];
+    }
     tempTags[tagname] = 1;
     setActiveTags(tempTags);
     console.log(activeTags);
   }
 
   const removeTag = (tagname) => {
-    const tempTags = activeTags;
+    const tempTags = {};
+
+    for (let t in activeTags) {
+      tempTags[t] = activeTags[t];
+    }
+
     tempTags[tagname] = 0;
     setActiveTags(tempTags);
     console.log(activeTags);
+  }
+
+  const changeFilter = () => {
+
   }
 
   useEffect(() => {
       getAllMessages();
     }, []);
 
+    useEffect(() => {
+          console.log("Tags changed");
+        }, [activeTags])
     // console.log(activeTags);
 
   return (
