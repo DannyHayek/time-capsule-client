@@ -7,7 +7,7 @@ const MessageInformation = () => {
     console.log("download message");
     // let zip = new JSZip();
     const temp = document.createElement("a");
-    const file = new Blob(["testtest"], {
+    const file = new Blob([JSON.parse(localStorage.getItem("currentMessage"))["body"]], {
       type: "text/plain"
     });
 
