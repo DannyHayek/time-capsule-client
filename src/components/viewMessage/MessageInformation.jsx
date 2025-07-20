@@ -5,24 +5,21 @@ import JSZip from 'jszip';
 const MessageInformation = () => {
   const downloadText = async () => {
     console.log("download message");
+
     let zip = new JSZip();
-
-    const temp = document.createElement("a");
-    const file = new Blob([JSON.parse(localStorage.getItem("currentMessage"))["body"]], {
-      type: "text/plain"
-    });
-
     zip.file("yourMessage.txt", JSON.parse(localStorage.getItem("currentMessage"))["body"]);
-
+    
     const zipped = await zip.generateAsync({
       type: "blob",
       streamFiles: true
     })
-
+    
+    const temp = document.createElement("a");
     temp.href = URL.createObjectURL(zipped);
     temp.download = "yourMessage.zip";
     document.body.appendChild(temp);
     temp.click();
+    temp.remove();
   }
 
   return (
