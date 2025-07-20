@@ -1,7 +1,22 @@
 import React from 'react'
 import downloadIcon from '../../assets/Icons/download-trans.png';
+import JSZip from 'jszip';
 
 const MessageInformation = () => {
+  const downloadText = () => {
+    console.log("download message");
+    // let zip = new JSZip();
+    const temp = document.createElement("a");
+    const file = new Blob(["testtest"], {
+      type: "text/plain"
+    });
+
+    temp.href = URL.createObjectURL(file);
+    temp.download = "yourMessage.txt";
+    document.body.appendChild(temp);
+    temp.click();
+  }
+
   return (
     <div className='flex'>
         <div className='view-message-info flex'>
@@ -26,9 +41,7 @@ const MessageInformation = () => {
           </article>
 
           <article>
-              <button className='download-message-btn' onClick={() => {
-                  console.log("download message");
-              }}>
+              <button className='download-message-btn' onClick={downloadText}>
                   <img className='download-icon' src={downloadIcon} alt='Download this message as ZIP'></img>
               </button>
           </article>
