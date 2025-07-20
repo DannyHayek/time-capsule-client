@@ -1,4 +1,5 @@
 import React from 'react'
+import downloadIcon from '../../assets/Icons/download-trans.png';
 
 const MessageInformation = () => {
   return (
@@ -22,6 +23,14 @@ const MessageInformation = () => {
           <article>
             <h4 className='view-info-title'>Tag</h4>
             <p className='view-info-title-detail'>{JSON.parse(localStorage.getItem("currentMessage"))["tag"]}</p>
+          </article>
+
+          <article>
+              <button className='download-message-btn' onClick={() => {
+                  console.log("download message");
+              }}>
+                  <img className='download-icon' src={downloadIcon} alt='Download this message as ZIP'></img>
+              </button>
           </article>
         </div>
     </div>
