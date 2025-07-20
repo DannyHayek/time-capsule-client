@@ -57,11 +57,6 @@ const MessageShore = () => {
       getAllMessages();
     }, []);
 
-    useEffect(() => {
-          console.log("Tags changed");
-        }, [activeTags])
-    // console.log(activeTags);
-
   return (
     <div className='flex column message-shore'>
       <ShoreTitle />
