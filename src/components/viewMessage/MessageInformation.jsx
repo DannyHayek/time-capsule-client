@@ -3,16 +3,24 @@ import downloadIcon from '../../assets/Icons/download-trans.png';
 import JSZip from 'jszip';
 
 const MessageInformation = () => {
-  const downloadText = () => {
+  const downloadText = async () => {
     console.log("download message");
-    // let zip = new JSZip();
+    let zip = new JSZip();
+
     const temp = document.createElement("a");
     const file = new Blob([JSON.parse(localStorage.getItem("currentMessage"))["body"]], {
       type: "text/plain"
     });
 
-    temp.href = URL.createObjectURL(file);
-    temp.download = "yourMessage.txt";
+    zip.file("yourMessage.txt", JSON.parse(localStorage.getItem("currentMessage"))["body"]);
+
+    const zipped = await zip.generateAsync({
+      type: "blob",
+      streamFiles: true
+    })
+
+    temp.href = URL.createObjectURL(zipped);
+    temp.download = "yourMessage.zip";
     document.body.appendChild(temp);
     temp.click();
   }
