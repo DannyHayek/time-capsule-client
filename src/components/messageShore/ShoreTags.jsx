@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import ShoreTagSelector from './ShoreTagSelector'
 
-const ShoreTags = () => {
+const ShoreTags = ({ addTag, removeTag}) => {
     const [tagList, setTags] = useState(["Happy", "Sad", "Hopeful", "Neutral"]);
 
   return (
@@ -9,7 +9,7 @@ const ShoreTags = () => {
         <h3>Filter by:</h3>
 
         {tagList.map((tag) => {
-            return <ShoreTagSelector tag={tag} />;
+            return <ShoreTagSelector tag={tag} addTag={addTag} removeTag={removeTag}/>;
         })}
     </div>
   )
