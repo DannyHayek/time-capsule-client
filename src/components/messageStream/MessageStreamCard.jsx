@@ -16,10 +16,12 @@ const MessageStreamCard = ({ num, user, bottled, recieved, status, tag, country,
   // console.log(num);
   return (
     <div className='flex column space-evenly message-stream-card'>
-        <div className='flex message-stream-card-title'>
-            <h5>{country}</h5>
+        <div className='flex column message-stream-card-title'>
+          <div className='flex'>
             <h3>Bottle # {num} </h3>
             <img className='share-icon' src={shareIcon} alt="Share icon"></img>
+          </div>
+            <h5>{country}</h5>
         </div>
         
 

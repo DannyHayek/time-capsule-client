@@ -39,6 +39,13 @@
 
 .message-stream-card-title {
     justify-content: end;
+    align-items: center;
+    font-size: calc(10px + 0.390625vw);
+}
+
+.message-stream-card-title h5 {
+    font-size: calc(7px + 0.390625vw);
+    margin-top: 10%
 }
 
 .stream-info-title {
@@ -46,7 +53,9 @@
 }
 
 .share-icon {
-    width: 24px;
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
 }
 
 .view-message-stream-btn {
