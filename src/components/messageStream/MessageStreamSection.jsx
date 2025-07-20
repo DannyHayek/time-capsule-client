@@ -18,7 +18,7 @@ console.log(userMessages)
   return (
     <div className='message-stream-section'>
         {userMessages.map((message) => {
-        return <MessageStreamCard num={message.id} user={message.username} bottled={message.created_at.slice(0,10)} recieved={message.delivery_date} status={message.status} tag={message.tagname} body={message.text}/>;
+        return <MessageStreamCard num={message.id} user={message.username} bottled={message.created_at.slice(0,10)} recieved={message.delivery_date} status={message.status} tag={message.tagname} country={message.location} body={message.text}/>;
       })}
     </div>
   )
