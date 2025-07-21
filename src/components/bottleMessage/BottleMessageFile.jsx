@@ -4,8 +4,9 @@ const BottleMessageFile = () => {
     
 
   return (
-    <div>
-      <h1>Test</h1>
+    <div className='flex column upload-image-div'>
+      <label>Upload a file...</label>
+      <input type='file'></input>
     </div>
   )
 }
