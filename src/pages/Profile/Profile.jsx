@@ -19,6 +19,7 @@ const Profile = () => {
     const userID = GetUserID();
     const token = GetToken();
 
+    
     axios.post(api, {"id" : userID}, {
       headers: {
         'Authorization': `bearer ${token}`,
@@ -32,9 +33,9 @@ const Profile = () => {
 
   return (
     <div>
-      <ProfileTitle pending = {userStats["pending"]}/>
+      {!!JSON.parse(localStorage.getItem("user")) && <ProfileTitle pending = {userStats["pending"]}/>}
       
-      <StatCardsSection recieved={userStats["total"]} publicNum={userStats["public"]} privateNum={userStats["private"]} unlisted={userStats["unlisted"]}/>
+      {!!JSON.parse(localStorage.getItem("user")) && <StatCardsSection recieved={userStats["total"]} publicNum={userStats["public"]} privateNum={userStats["private"]} unlisted={userStats["unlisted"]}/>}
     </div>
   )
 }
