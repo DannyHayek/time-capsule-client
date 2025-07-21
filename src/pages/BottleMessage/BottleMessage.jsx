@@ -16,6 +16,7 @@ const BottleMessage = () => {
   const [bottleSurprise, setSurprise] = useState("");
   const [bottleBody, setBody] = useState("");
   const [bottleFile, setFile] = useState();
+  const [fileBase64, set64] = useState();
 
   const navigate = useNavigate();
 
@@ -37,14 +38,13 @@ const BottleMessage = () => {
       .replace(/^.+,/, '');
       
       //console.log(base64String);
-      
+      // const image = CreateAPI("/guest/image_test");
+      // axios.post(image, {
+      //   "base64" : base64String,
+      // }).then(response => console.log(response))
+      set64(base64String);
     };
     reader.readAsDataURL(bottleFile);
-    
-    const image = CreateAPI("/guest/image_test");
-    axios.post(image, {
-      "base64" : "base64String",
-    }).then(response => console.log(response))
     
     if (bottleDelivery == "") {
       let today = new Date().toISOString().slice(0, 10)
@@ -69,18 +69,19 @@ const BottleMessage = () => {
     const userID = GetUserID();
     const token = GetToken();
 
-    // axios.post(api, {
-    //   "user_id" : userID,
-    //   "tag_id" : bottleTag,
-    //   "delivery_date" : bottleDelivery,
-    //   "status" : bottleStatus,
-    //   "isSurprise" : 0,
-    //   "text" : bottleBody,
-    // }, {
-    //   headers: {
-    //     'Authorization': `bearer ${token}`,
-    //   }
-    // }).then(navigate("/Profile"));
+    axios.post(api, {
+      "user_id" : userID,
+      "tag_id" : bottleTag,
+      "delivery_date" : bottleDelivery,
+      "status" : bottleStatus,
+      "isSurprise" : 0,
+      "text" : bottleBody,
+      "base64" : fileBase64
+    }, {
+      headers: {
+        'Authorization': `bearer ${token}`,
+      }
+    }).then(response => console.log(response.data));
   }
 
   return (
