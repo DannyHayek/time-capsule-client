@@ -32,16 +32,20 @@ const BottleMessage = () => {
     const reader = new FileReader();
     
     reader.onloadend = () => {
-            // Use a regex to remove data url part
-            const base64String = reader.result
-                .replace('data:', '')
-                .replace(/^.+,/, '');
-
-            console.log(base64String);
-            // Logs wL2dvYWwgbW9yZ...
-        };
-        reader.readAsDataURL(bottleFile);
-
+      const base64String = reader.result
+      .replace('data:', '')
+      .replace(/^.+,/, '');
+      
+      //console.log(base64String);
+      
+    };
+    reader.readAsDataURL(bottleFile);
+    
+    const image = CreateAPI("/guest/image_test");
+    axios.post(image, {
+      "base64" : "base64String",
+    }).then(response => console.log(response))
+    
     if (bottleDelivery == "") {
       let today = new Date().toISOString().slice(0, 10)
       setDelivery(today);
