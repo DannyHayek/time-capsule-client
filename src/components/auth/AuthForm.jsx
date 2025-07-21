@@ -33,7 +33,7 @@ const AuthForm = () => {
     axios.post(api, {"email": currentEmail, "password": currentPass, "name":currentName})
     .then(response => localStorage.setItem("user", JSON.stringify((response.data["payload"]))))
     .then(console.log(JSON.parse(localStorage.getItem("user"))))
-    .then(navigate("/Profile"));
+    .then(setTimeout(navigate("/Profile"), 2000));
   }
 
 
