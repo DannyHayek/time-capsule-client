@@ -15,6 +15,7 @@ const BottleMessage = () => {
   const [bottleTag, setTag] = useState("");
   const [bottleSurprise, setSurprise] = useState("");
   const [bottleBody, setBody] = useState("");
+  const [bottleFile, setFile] = useState();
 
   const navigate = useNavigate();
 
@@ -26,6 +27,20 @@ const BottleMessage = () => {
     // console.log(bottleTag);
     // console.log(bottleSurprise);
     // console.log(bottleBody);
+
+
+    const reader = new FileReader();
+    
+    reader.onloadend = () => {
+            // Use a regex to remove data url part
+            const base64String = reader.result
+                .replace('data:', '')
+                .replace(/^.+,/, '');
+
+            console.log(base64String);
+            // Logs wL2dvYWwgbW9yZ...
+        };
+        reader.readAsDataURL(bottleFile);
 
     if (bottleDelivery == "") {
       let today = new Date().toISOString().slice(0, 10)
@@ -67,7 +82,7 @@ const BottleMessage = () => {
   return (
     <div className='flex column bottle-message'>
       <BottleMessageTitle />
-      <BottleMessageCard setDelivery={setDelivery} setStatus={setStatus} setTag={setTag} setSurprise={setSurprise} setBody={setBody}/>
+      <BottleMessageCard setDelivery={setDelivery} setStatus={setStatus} setTag={setTag} setSurprise={setSurprise} setBody={setBody} setFile={setFile}/>
       <BottleMessageButton bottleMessage={bottleMessage}/>
     </div>
   )

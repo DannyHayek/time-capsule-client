@@ -1,12 +1,12 @@
 import React from 'react'
 
-const BottleMessageFile = () => {
-    
-
+const BottleMessageFile = ({setFile}) => {
+  
   return (
+
     <div className='flex column upload-image-div'>
       <label>Upload a file...</label>
-      <input type='file'></input>
+      <input onChange={e => setFile(e.target.files[0])} type='file'></input>
     </div>
   )
 }
