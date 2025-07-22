@@ -8,6 +8,7 @@ const MessageInformation = () => {
 
     let zip = new JSZip();
     zip.file("yourMessage.txt", JSON.parse(localStorage.getItem("currentMessage"))["body"]);
+    zip.file("yourImage.png", JSON.parse(localStorage.getItem("currentMessage"))["attachable"]);
     
     const zipped = await zip.generateAsync({
       type: "blob",

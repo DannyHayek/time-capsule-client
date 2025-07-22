@@ -69,6 +69,8 @@ const BottleMessage = () => {
     const userID = GetUserID();
     const token = GetToken();
 
+    //console.log(fileBase64);
+
     axios.post(api, {
       "user_id" : userID,
       "tag_id" : bottleTag,
@@ -81,7 +83,9 @@ const BottleMessage = () => {
       headers: {
         'Authorization': `bearer ${token}`,
       }
-    }).then(response => console.log(response.data));
+    })
+    .then(response => console.log(response.data))
+    .then(navigate('/Profile'));
   }
 
   return (
