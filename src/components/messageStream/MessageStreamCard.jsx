@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import shareIcon from '../../assets/Icons/share-trans.png'
 import { useNavigate } from 'react-router-dom'
 
-const MessageStreamCard = ({ num, user, bottled, recieved, status, tag, country, body, surprise }) => {
+const MessageStreamCard = ({ num, user, bottled, recieved, status, tag, country, body, surprise, attachable }) => {
   const navigate = useNavigate();
   const currentMessage = {
     "num": num,
@@ -11,7 +11,8 @@ const MessageStreamCard = ({ num, user, bottled, recieved, status, tag, country,
     "recieved": recieved,
     "status": status,
     "tag": tag,
-    "body": body
+    "body": body,
+    "attachable" : attachable
   }
 
   function dateDiffInDays(a, b) {

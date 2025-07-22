@@ -6,21 +6,23 @@ const MessageInformation = () => {
   const downloadText = async () => {
     console.log("download message");
 
-    let zip = new JSZip();
-    zip.file("yourMessage.txt", JSON.parse(localStorage.getItem("currentMessage"))["body"]);
-    zip.file("yourImage.png", JSON.parse(localStorage.getItem("currentMessage"))["attachable"]);
+    // let zip = new JSZip();
+    // zip.file("yourMessage.txt", JSON.parse(localStorage.getItem("currentMessage"))["body"]);
+    // zip.file("yourImage.png", JSON.parse(localStorage.getItem("currentMessage"))["attachable"]);
     
-    const zipped = await zip.generateAsync({
-      type: "blob",
-      streamFiles: true
-    })
+    console.log(JSON.parse(localStorage.getItem("currentMessage")));
+
+    // const zipped = await zip.generateAsync({
+    //   type: "blob",
+    //   streamFiles: true
+    // })
     
-    const temp = document.createElement("a");
-    temp.href = URL.createObjectURL(zipped);
-    temp.download = "yourMessage.zip";
-    document.body.appendChild(temp);
-    temp.click();
-    temp.remove();
+    // const temp = document.createElement("a");
+    // temp.href = URL.createObjectURL(zipped);
+    // temp.download = "yourMessage.zip";
+    // document.body.appendChild(temp);
+    // temp.click();
+    // temp.remove();
   }
 
   return (
