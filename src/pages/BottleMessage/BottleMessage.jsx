@@ -8,6 +8,7 @@ import CreateAPI from '../../components/shared/CreateAPI'
 import GetToken from '../../components/shared/GetToken'
 import GetUserID from '../../components/shared/GetUserID'
 import { useNavigate } from 'react-router-dom'
+import { file } from 'jszip'
 
 const BottleMessage = () => {
   const [bottleDelivery, setDelivery] = useState("");
@@ -20,12 +21,6 @@ const BottleMessage = () => {
   
   const navigate = useNavigate();
   
-  const convert64 = () => {
-    return new Promise(function (resolve, reject) {
-    })
-    
-    
-  }
   
   const bottleMessage = async () => {
     // console.log(bottleDelivery);
@@ -35,22 +30,7 @@ const BottleMessage = () => {
     // console.log(bottleBody);
     
 
-    const reader = new FileReader();
     
-    reader.onloadend = () => {
-      const base64String = reader.result
-      .replace('data:', '')
-      .replace(/^.+,/, '');
-      
-      //console.log(base64String);
-      // const image = CreateAPI("/guest/image_test");
-      // axios.post(image, {
-      //   "base64" : base64String,
-      // }).then(response => console.log(response))
-      set64(base64String);
-    };
-    
-    reader.readAsDataURL(bottleFile)
     
     if (bottleDelivery == "") {
       let today = new Date().toISOString().slice(0, 10)
@@ -90,13 +70,12 @@ const BottleMessage = () => {
     })
     .then(response => console.log(response.data))
     // .then(navigate('/Profile'));
-  
   }
 
   return (
     <div className='flex column bottle-message'>
       <BottleMessageTitle />
-      <BottleMessageCard setDelivery={setDelivery} setStatus={setStatus} setTag={setTag} setSurprise={setSurprise} setBody={setBody} setFile={setFile}/>
+      <BottleMessageCard setDelivery={setDelivery} setStatus={setStatus} setTag={setTag} setSurprise={setSurprise} setBody={setBody} setFile={setFile} set64={set64}/>
       <BottleMessageButton bottleMessage={bottleMessage}/>
     </div>
   )
