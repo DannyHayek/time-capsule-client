@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import BottleMessageTitle from '../../components/bottleMessage/BottleMessageTitle'
 import BottleMessageCard from '../../components/bottleMessage/BottleMessageCard'
 import './BottleMessage.css'
@@ -17,60 +17,65 @@ const BottleMessage = () => {
   const [bottleBody, setBody] = useState("");
   const [bottleFile, setFile] = useState();
   const [fileBase64, set64] = useState();
-
+  
   const navigate = useNavigate();
-
-  const props = [setDelivery, setStatus, setTag, setSurprise, setBody];
-
-  const bottleMessage = () => {
+  
+  const convert64 = () => {
+    return new Promise(function (resolve, reject) {
+    })
+    
+    
+  }
+  
+  const bottleMessage = async () => {
     // console.log(bottleDelivery);
     // console.log(bottleStatus);
     // console.log(bottleTag);
     // console.log(bottleSurprise);
     // console.log(bottleBody);
-
-
-    const reader = new FileReader();
     
-    reader.onloadend = () => {
-      const base64String = reader.result
-      .replace('data:', '')
-      .replace(/^.+,/, '');
+    while (fileBase64 == undefined) {
+      const reader = new FileReader();
       
-      //console.log(base64String);
-      // const image = CreateAPI("/guest/image_test");
-      // axios.post(image, {
-      //   "base64" : base64String,
-      // }).then(response => console.log(response))
-      set64(base64String);
-    };
-    reader.readAsDataURL(bottleFile);
+      reader.onloadend = () => {
+        const base64String = reader.result
+        .replace('data:', '')
+        .replace(/^.+,/, '');
+        
+        //console.log(base64String);
+        // const image = CreateAPI("/guest/image_test");
+        // axios.post(image, {
+        //   "base64" : base64String,
+        // }).then(response => console.log(response))
+        set64(base64String);
+      };
+      
+      reader.readAsDataURL(bottleFile)
+    }
     
     if (bottleDelivery == "") {
       let today = new Date().toISOString().slice(0, 10)
       setDelivery(today);
     } 
-
+    
     if (bottleTag == "") {
       setTag(1);
     } 
-
+    
     if (bottleStatus == "") {
       setStatus("Public");
     } 
-
+    
     if (bottleSurprise == "") {
       setSurprise(0);
     } 
-
-
+    
+    console.log(fileBase64);
     const api = CreateAPI("/user/create_message");
-
+    
     const userID = GetUserID();
     const token = GetToken();
-
-    //console.log(fileBase64);
-
+    
     axios.post(api, {
       "user_id" : userID,
       "tag_id" : bottleTag,
@@ -85,7 +90,8 @@ const BottleMessage = () => {
       }
     })
     .then(response => console.log(response.data))
-    .then(navigate('/Profile'));
+    // .then(navigate('/Profile'));
+  
   }
 
   return (

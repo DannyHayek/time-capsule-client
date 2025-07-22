@@ -6,7 +6,7 @@ const BottleMessageFile = ({setFile}) => {
 
     <div className='flex column upload-image-div'>
       <label>Upload an Image...</label>
-      <input onChange={e => setFile(e.target.files[0])} type='file'></input>
+      <input onChange={e => setFile(e.target.files[0])} className='primary-btn' type='file'></input>
     </div>
   )
 }
