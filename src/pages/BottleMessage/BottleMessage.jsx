@@ -34,24 +34,23 @@ const BottleMessage = () => {
     // console.log(bottleSurprise);
     // console.log(bottleBody);
     
-    while (fileBase64 == undefined) {
-      const reader = new FileReader();
+
+    const reader = new FileReader();
+    
+    reader.onloadend = () => {
+      const base64String = reader.result
+      .replace('data:', '')
+      .replace(/^.+,/, '');
       
-      reader.onloadend = () => {
-        const base64String = reader.result
-        .replace('data:', '')
-        .replace(/^.+,/, '');
-        
-        //console.log(base64String);
-        // const image = CreateAPI("/guest/image_test");
-        // axios.post(image, {
-        //   "base64" : base64String,
-        // }).then(response => console.log(response))
-        set64(base64String);
-      };
-      
-      reader.readAsDataURL(bottleFile)
-    }
+      //console.log(base64String);
+      // const image = CreateAPI("/guest/image_test");
+      // axios.post(image, {
+      //   "base64" : base64String,
+      // }).then(response => console.log(response))
+      set64(base64String);
+    };
+    
+    reader.readAsDataURL(bottleFile)
     
     if (bottleDelivery == "") {
       let today = new Date().toISOString().slice(0, 10)
