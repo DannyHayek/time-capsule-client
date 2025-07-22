@@ -28,9 +28,8 @@ const BottleMessage = () => {
     // console.log(bottleTag);
     // console.log(bottleSurprise);
     // console.log(bottleBody);
-    
-
-    
+    // console.log(fileBase64);
+       
     
     if (bottleDelivery == "") {
       let today = new Date().toISOString().slice(0, 10)
@@ -49,7 +48,6 @@ const BottleMessage = () => {
       setSurprise(0);
     } 
     
-    console.log(fileBase64);
     const api = CreateAPI("/user/create_message");
     
     const userID = GetUserID();
@@ -60,7 +58,7 @@ const BottleMessage = () => {
       "tag_id" : bottleTag,
       "delivery_date" : bottleDelivery,
       "status" : bottleStatus,
-      "isSurprise" : 0,
+      "isSurprise" : bottleSurprise,
       "text" : bottleBody,
       "base64" : fileBase64
     }, {
@@ -69,7 +67,7 @@ const BottleMessage = () => {
       }
     })
     .then(response => console.log(response.data))
-    // .then(navigate('/Profile'));
+    .then(navigate('/Profile'));
   }
 
   return (
