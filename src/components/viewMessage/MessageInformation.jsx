@@ -5,7 +5,8 @@ import axios from 'axios';
 import GetToken from '../shared/GetToken';
 
 const MessageInformation = () => {
-  const tempPath = JSON.parse(localStorage.getItem("currentMessage"))["attachable"];
+  // const tempPath = JSON.parse(localStorage.getItem("currentMessage"))["attachable"];
+  const tempPath = "http://localhost:8000/storage/98/image_2025-07-23-14-10-47.png";
   if (tempPath) {
     console.log("Image available")
   }
@@ -47,10 +48,8 @@ const MessageInformation = () => {
             <p className='view-info-title-detail'>{JSON.parse(localStorage.getItem("currentMessage"))["recieved"]}</p>
           </article>
 
-          {!!imagePath && <article>
-              <button className='download-message-btn' onClick={downloadText}>
-                  <img className='download-icon' src={imagePath.default} alt='UserImage'></img>
-              </button>
+          {<article>
+                  <img className='user-image' src={tempPath} alt='UserImage'></img>
           </article>}
 
           <article>
