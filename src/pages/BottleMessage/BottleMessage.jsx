@@ -11,11 +11,11 @@ import { useNavigate } from 'react-router-dom'
 import { file } from 'jszip'
 
 const BottleMessage = () => {
-  const [bottleDelivery, setDelivery] = useState("");
-  const [bottleStatus, setStatus] = useState("");
-  const [bottleTag, setTag] = useState("");
-  const [bottleSurprise, setSurprise] = useState("");
-  const [bottleBody, setBody] = useState("");
+  const [bottleDelivery, setDelivery] = useState();
+  const [bottleStatus, setStatus] = useState("Public");
+  const [bottleTag, setTag] = useState(1);
+  const [bottleSurprise, setSurprise] = useState(0);
+  const [bottleBody, setBody] = useState();
   const [bottleFile, setFile] = useState();
   const [fileBase64, set64] = useState();
   
@@ -23,31 +23,20 @@ const BottleMessage = () => {
   
   
   const bottleMessage = async () => {
-    // console.log(bottleDelivery);
-    // console.log(bottleStatus);
-    // console.log(bottleTag);
-    // console.log(bottleSurprise);
-    // console.log(bottleBody);
+    console.log(bottleDelivery);
+    console.log(bottleStatus);
+    console.log(bottleTag);
+    console.log(bottleSurprise);
+    console.log(bottleBody);
     // console.log(fileBase64);
        
     
-    if (bottleDelivery == "") {
+    if (bottleDelivery === undefined) {
       let today = new Date().toISOString().slice(0, 10)
       setDelivery(today);
     } 
     
-    if (bottleTag == "") {
-      setTag(1);
-    } 
-    
-    if (bottleStatus == "") {
-      setStatus("Public");
-    } 
-    
-    if (bottleSurprise == "") {
-      setSurprise(0);
-    } 
-    
+
     const api = CreateAPI("/user/create_message");
     
     const userID = GetUserID();
@@ -67,7 +56,7 @@ const BottleMessage = () => {
       }
     })
     .then(response => console.log(response.data))
-    .then(navigate('/Profile'));
+    // .then(navigate('/Profile'));
   }
 
   return (
