@@ -3,7 +3,7 @@
 }
 
 .view-message-title {
-    margin: 4% 0 3%;
+    margin: 2% 0 2%;
     font-size: calc(22px + 0.390625vw);
 }
 
@@ -13,7 +13,7 @@
     border-radius: 30px;
     align-items: center;
     height: fit-content;
-    min-height: 50dvh;
+    min-height: 55dvh;
     margin-bottom: 2%;
 }
 
@@ -37,7 +37,7 @@
 }
 
 .message-body {
-    margin: 4% 0;
+    margin: 0% 0;
     text-align: left;
     width: 75dvw;
     font-size: calc(11px + 0.390625vw);
@@ -54,4 +54,8 @@
 
 .download-icon {
     width: 20px;
+}
+
+.user-image {
+    width: 20rem;
 }

@@ -5,11 +5,13 @@ import axios from 'axios';
 import GetToken from '../shared/GetToken';
 
 const MessageInformation = () => {
-  const tempPath = JSON.parse(localStorage.getItem("currentMessage"))["attachable"];
-  if (tempPath) {
+  // const baseImagePath = "http://localhost:8000/storage/";
+  const imagePath = JSON.parse(localStorage.getItem("currentMessage"))["attachable"];
+
+  if (imagePath) {
     console.log("Image available")
+    console.log(JSON.parse(localStorage.getItem("currentMessage"))["attachable"])
   }
-  const imagePath = null;
 
   const downloadText = async () => {
     console.log("download message");
@@ -17,7 +19,8 @@ const MessageInformation = () => {
     let zip = new JSZip();
     zip.file("yourMessage.txt", JSON.parse(localStorage.getItem("currentMessage"))["body"]);
 
-    // zip.file("yourImage.txt", tempPath);
+    // const image = fetch("http://localhost:8000/storage/98/image_2025-07-23-14-10-47.png", {mode: 'no-cors'})
+    // .then(response => zip.file("yourImage.png", response));
     
     console.log(JSON.parse(localStorage.getItem("currentMessage"))["attachable"]);
 
@@ -48,9 +51,7 @@ const MessageInformation = () => {
           </article>
 
           {!!imagePath && <article>
-              <button className='download-message-btn' onClick={downloadText}>
-                  <img className='download-icon' src={imagePath.default} alt='UserImage'></img>
-              </button>
+                  <img className='user-image' src={imagePath} alt='UserImage'></img>
           </article>}
 
           <article>

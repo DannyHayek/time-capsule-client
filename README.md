@@ -1,3 +1,16 @@
+# Project Description
+
+This is a time capsule project. A website that allows users to send messages to themselves through time.
+It was created using React on the frontend and Laravel on the backend. This repository contains the frontend of the project.
+
+Working features:
+- Login/Signup
+- Bottle (Create) a message
+- View your messages
+- Attach an image to the message
+- Export the message as ZIP
+- View a public message shore with filters
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
