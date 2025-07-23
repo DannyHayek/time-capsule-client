@@ -5,17 +5,19 @@ import axios from 'axios';
 import GetToken from '../shared/GetToken';
 
 const MessageInformation = () => {
+  const tempPath = JSON.parse(localStorage.getItem("currentMessage"))["attachable"];
+  if (tempPath) {
+    console.log("Image available")
+  }
+  const imagePath = null;
+
   const downloadText = async () => {
     console.log("download message");
 
     let zip = new JSZip();
     zip.file("yourMessage.txt", JSON.parse(localStorage.getItem("currentMessage"))["body"]);
-    
-    const token = GetToken();
-    const image = await axios.get('http://127.0.0.1:8000/storage/app/public/image_2025-07-22-06-46-33.png');
-    const imageblob = await image.blob();
 
-    zip.file("yourImage.png", 'http://127.0.0.1:8000/storage/app/public/image_2025-07-22-06-46-33.png');
+    // zip.file("yourImage.txt", tempPath);
     
     console.log(JSON.parse(localStorage.getItem("currentMessage"))["attachable"]);
 
@@ -45,10 +47,17 @@ const MessageInformation = () => {
             <p className='view-info-title-detail'>{JSON.parse(localStorage.getItem("currentMessage"))["recieved"]}</p>
           </article>
 
+          {!!imagePath && <article>
+              <button className='download-message-btn' onClick={downloadText}>
+                  <img className='download-icon' src={imagePath.default} alt='UserImage'></img>
+              </button>
+          </article>}
+
           <article>
             <h4 className='view-info-title'>Status</h4>
             <p className='view-info-title-detail'>{JSON.parse(localStorage.getItem("currentMessage"))["status"]}</p>
           </article>
+
 
           <article>
             <h4 className='view-info-title'>Tag</h4>
@@ -61,11 +70,6 @@ const MessageInformation = () => {
               </button>
           </article>
 
-          <article>
-              <button className='download-message-btn' onClick={downloadText}>
-                  <img className='download-icon' src={JSON.parse(localStorage.getItem("currentMessage"))["attachable"]} alt='Download this message as ZIP'></img>
-              </button>
-          </article>
         </div>
     </div>
   )

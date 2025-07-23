@@ -23,11 +23,11 @@ const BottleMessage = () => {
   
   
   const bottleMessage = async () => {
-    console.log(bottleDelivery);
-    console.log(bottleStatus);
-    console.log(bottleTag);
-    console.log(bottleSurprise);
-    console.log(bottleBody);
+    // console.log(bottleDelivery);
+    // console.log(bottleStatus);
+    // console.log(bottleTag);
+    // console.log(bottleSurprise);
+    // console.log(bottleBody);
     // console.log(fileBase64);
        
     
@@ -56,7 +56,7 @@ const BottleMessage = () => {
       }
     })
     .then(response => console.log(response.data))
-    // .then(navigate('/Profile'));
+    .then(navigate('/Profile'));
   }
 
   return (
